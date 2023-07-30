@@ -1,45 +1,42 @@
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles/navbar.css" />
-  <link rel="stylesheet" href="styles/footer.css" />
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <title>Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"></script>
+    <script>
+    $(function() {
+    $(".toggle").on("click", function() {
+        if ($(".item").hasClass("active")) {
+            $(".item").removeClass("active");
+        } else {
+            $(".item").addClass("active");
+        }
+    });
+});
+    </script>
 </head>
-
 <body>
-  <nav class="navbar">
-    
-    <div class="logo">Trident</div>
-
-    <label for="checkbox_toggle" class="hamburger">&#9776;</label>
-
-    <ul class="nav-links" id="checkbox_target">
-      <div class="menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Map</a></li>
-
-        <li class="services">
-          <a href="#">Sports</a>
-
-          <ul class="dropdown">
-            <li><a href="football.html">Football</a></li>
-            <li><a href="rugby.html">Rugby</a></li>
-            <li><a href="motorsport.html">Motorsport</a></li>
-            <li><a href="icehockey.html">Ice Hockey</a></li>
-            <li><a href="#">coming soon</a></li>
-          </ul>
+    <nav>
+        <ul class="menu">
+          <img src="images/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            <li class="logo"><a href="#">Trident</a></li>
+            <li class="item"><a href="#">Home</a></li>
+            <li class="item"><a href="#">Map</a></li>
+            <li class="item"><a href="#">Sports</a></li>
+            <li class="item"><a href="#">Account</a></li>
+            <li class="item"><a href="#">Contact</a></li>
         </li>
+            <li class="toggle"><span class="bars"></span></li>
+        </ul>
+    </nav>
 
-        <li><a href="#">Account</a></li>
-        <li><a href="#">Contact</a></li>
-      </div>
-    </ul>
-  </nav>
 
    <footer class="footer">
     <div class="container">
