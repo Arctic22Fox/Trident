@@ -4,15 +4,24 @@ body{
   font-family: 'Poppins', sans-serif;
 }
 *{
-  margin:0;
+  
   padding:0;
   box-sizing: border-box;
 }
 .container{
-  max-width: 1170px;
-  margin-right:auto;
-  margin-left: auto;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 70px 0;
+  /* height: 2.5rem; */
+  background-color: #24262b;          
+  text-align: center;  
+  /* Footer height */
 }
+  
+  /* bottom: 0;
+  text-align: center; */
+
 .row{
   display: flex;
   flex-wrap: wrap;
@@ -21,15 +30,16 @@ ul{
   list-style: none;
 }
 .footer{
-  background-color: #24262b;
+  
   color: #ffffff;
   padding: 70px 0;
     
 }
 .footer-col{
-   width: 25%;
-   padding: 0 15px;
+   width: 20%;
+   padding: 0 ;
    position: relative;
+   margin-left: 8.3%;
 }
 .footer-col h4{
   font-size: 18px;
@@ -42,12 +52,13 @@ ul{
 .footer-col h4::before{
   content: '';
   position: absolute;
-  left:0;
+  left:45%;
   bottom: -10px;
   background-color: #00a7e1;
   height: 2px;
   box-sizing: border-box;
   width: 50px;
+  
   
 }
 .footer-col ul li:not(:last-child){
