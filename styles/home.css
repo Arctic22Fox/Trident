@@ -1,5 +1,9 @@
 /* images */
+<<<<<<< Updated upstream
 div.gallery {
+=======
+div.row {
+>>>>>>> Stashed changes
     float: left;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -7,7 +11,7 @@ div.gallery {
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
   }
 
-  div.gallery:hover {
+  div.row:hover {
     border: 1px solid #00a7e1;
   }
 
