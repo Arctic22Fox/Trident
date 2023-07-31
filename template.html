@@ -11,17 +11,6 @@
     src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
     crossorigin="anonymous"></script>
-    <script>
-    $(function() {
-    $(".toggle").on("click", function() {
-        if ($(".item").hasClass("active")) {
-            $(".item").removeClass("active");
-        } else {
-            $(".item").addClass("active");
-        }
-    });
-});
-    </script>
 </head>
 <body>
     <nav>
@@ -31,7 +20,7 @@
             <li class="item"><a href="#">Home</a></li>
             <li class="item"><a href="#">Map</a></li>
             <li class="item"><a href="#">Sports</a></li>
-            <li class="item"><a href="#">Account</a></li>
+            <li class="item"><a href="login.html">Account</a></li>
             <li class="item"><a href="#">Contact</a></li>
         </li>
             <li class="toggle"><span class="bars"></span></li>
@@ -71,6 +60,7 @@
      </div>
     </div>
  </footer>
+ <script src="javascript/nav.js"></script>
 </body>
 
 </html>
