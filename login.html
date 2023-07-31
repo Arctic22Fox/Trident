@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+          <img src="images/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            <li class="logo"><a href="#">Trident </a></li>
+            <li class="item"><a href="template.html">Home</a></li>
+            <li class="item"><a href="#">Map</a></li>
+            <li class="item"><a href="#">Sports</a></li><li class="item"><a href="login.html">Account</a></li>
+            <li class="item"><a href="#">Contact</a></li>
+        </li>
+            <li class="toggle"><span class="bars"></span></li>
+        </ul>
+    </nav>
+    
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="images/avatar_male.png" alt="Avatar" class="avatar" >
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw"><a href="#" id="password">Forgot password?</a></span>
+    </div>
+  </form>
+</div>
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="images/avatar_male.png" alt="Avatar" class="avatar" >
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw"><a href="#" id="password">Forgot password?</a></span>
+    </div>
+  </form>
+</div>
+<footer class="footer">
+    <div class="container">
+     <div class="row">
+       <div class="footer-col">
+         <h4>TicketFinder</h4>
+         <ul>
+           <li><a href="#">The Team</a></li>
+           <li><a href="#">Privacy Policy</a></li>
+           <li>Trident &copy; 2023</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>Get Help</h4>
+         <ul>
+           <li><a href="#">FAQ</a></li>
+           <li><a href="#">Payment Options</a></li>
+           <li><a href="#">Account</a></li>
+           <li><a href="#">Contact Us</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>Sports</h4>
+         <ul>
+           <li><a href="#">Football</a></li>
+           <li><a href="#">Rugby</a></li>
+           <li><a href="#">Motorsport</a></li>
+           <li><a href="#">Ice Hockey</a></li>
+         </ul>
+       </div>
+     </div>
+    </div>
+ </footer>
+</body>
+</html>
