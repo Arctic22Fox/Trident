@@ -12,7 +12,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-  background-color: #04AA6D;
+  background-color: #00171f;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -46,6 +46,8 @@ img.avatar {
 
 .container {
   padding: 16px;
+  background-color:#24262b;
+  color: #fefefe
 }
 
 span.psw {
@@ -65,15 +67,30 @@ span.psw {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
+  padding: 60px;
 }
+
+/* Modal input style  */
+
+
+.modal-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* The rest of your existing CSS styles... */
+
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #00171f;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 400px; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -81,7 +98,7 @@ span.psw {
   position: absolute;
   right: 25px;
   top: 0;
-  color: #000;
+  color: #fefefe;
   font-size: 35px;
   font-weight: bold;
 }
