@@ -1,0 +1,114 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>home</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"></script>
+    <script>
+    $(function() {
+    $(".toggle").on("click", function() {
+        if ($(".item").hasClass("active")) {
+            $(".item").removeClass("active");
+        } else {
+            $(".item").addClass("active");
+        }
+    });
+});
+    </script>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+          <img src="images/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            <li class="logo"><a href="#">Trident</a></li>
+            <li class="item"><a href="#">Home</a></li>
+            <li class="item"><a href="#">Map</a></li>
+            <li class="item"><a href="#">Sports</a></li>
+            <li class="item"><a href="#">Account</a></li>
+            <li class="item"><a href="#">Contact</a></li>
+        </li>
+            <li class="toggle"><span class="bars"></span></li>
+        </ul>
+    </nav>
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="images/soccer.jpg">
+          <img src="images/soccer.jpg" alt="soccer" width="600" height="400">
+        </a>
+        <div class="desc">Football</div>
+      </div>
+    </div>
+
+<container>
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="images/icehockey.jpg">
+          <img src="images/icehockey.jpg" alt="ice hockey" width="600" height="400">
+        </a>
+        <div class="desc">Ice Hockey</div>
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="images/rugby.jpg">
+          <img src="images/rugby.jpg" alt="rugby" width="600" height="400">
+        </a>
+        <div class="desc">Rugby</div>
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="images/motorsports.jpg">
+          <img src="images/motorsports.jpg" alt="motorsports" width="600" height="400">
+        </a>
+        <div class="desc">Motorsports</div>
+      </div>
+    </div>
+  </container>
+
+   <footer class="footer">
+    <div class="container">
+     <div class="row">
+       <div class="footer-col">
+         <h4>TicketFinder</h4>
+         <ul>
+           <li><a href="terms.html">Terms and Conditions</a></li>
+           <li><a href="privacypolicy.html">Privacy Policy</a></li>
+           <li>Trident &copy; 2023</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>Get Help</h4>
+         <ul>
+           <li><a href="#">FAQ</a></li>
+           <li><a href="#">Payment Options</a></li>
+           <li><a href="#">Account</a></li>
+           <li><a href="#">Contact Us</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>Sports</h4>
+         <ul>
+           <li><a href="#">Football</a></li>
+           <li><a href="#">Rugby</a></li>
+           <li><a href="#">Motorsport</a></li>
+           <li><a href="#">Ice Hockey</a></li>
+         </ul>
+       </div>
+     </div>
+    </div>
+ </footer>
+</body>
+
+</html>
