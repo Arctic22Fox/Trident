@@ -13,24 +13,20 @@ body{
   bottom: 0;
   width: 100%;
   padding: 70px 0;
-
+<<<<<<<<< Temporary merge branch 1
   /* height: 2.5rem; */
   background-color: #24262b;          
   text-align: center;  
   /* Footer height */
 }
-  
-  /* bottom: 0;
-  text-align: center; */
-
 .row{
   display: flex;
   flex-wrap: wrap;
-
+=========
   height: 2.5rem;
   background-color: #24262b;          
   text-align: center;  
-
+>>>>>>>>> Temporary merge branch 2
 }
 ul{
   list-style: none;
