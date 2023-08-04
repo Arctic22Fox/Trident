@@ -20,6 +20,11 @@ button {
   cursor: pointer;
   width: 100%;
 }
+button .signup {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
 
 button:hover {
   opacity: 0.8;
@@ -82,7 +87,7 @@ span.psw {
   border-radius: 4px;
 }
 
-/* The rest of your existing CSS styles... */
+
 
 
 /* Modal Content/Box */
@@ -139,3 +144,4 @@ span.psw {
 #password {
     color: #fefefe;
 }
+
