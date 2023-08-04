@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet" href="styles/footer.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/footer2.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"></script>
+    <title>Login/Signup</title>
 </head>
 <body>
     <nav>
         <ul class="menu">
           <img src="images/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
             <li class="logo"><a href="#">Trident </a></li>
-            <li class="item"><a href="template.html">Home</a></li>
+            <li class="item"><a href="home.html">Home</a></li>
             <li class="item"><a href="#">Map</a></li>
             <li class="item"><a href="#">Sports</a></li>
             <li class="item"><a href="login.html">Account</a></li>
@@ -23,8 +28,19 @@
         </ul>
     </nav>
     
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+<!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
 <div id="id01" class="modal">
   
@@ -52,7 +68,7 @@
       <span class="psw"><a href="#" id="password">Forgot password?</a></span>
     </div>
   </form>
-</div>
+</div> -->
 
 <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
 
@@ -61,7 +77,7 @@
   <form class="modal-content animate" action="/action_page.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="images/avatar_male.png" alt="Avatar" class="avatar">
+      <img src="images/logo.png" alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
@@ -91,7 +107,7 @@
     <div class="container">
      <div class="row">
        <div class="footer-col">
-         <h4>Trident</h4>
+         <h4>TicketFinder</h4>
          <ul>
            <li><a href="#">The Team</a></li>
            <li><a href="#">Privacy Policy</a></li>

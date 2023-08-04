@@ -9,19 +9,10 @@ body{
   box-sizing: border-box;
 }
 .container{
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 70px 0;
-  /* height: 2.5rem; */
-  background-color: #24262b;          
-  text-align: center;  
-  /* Footer height */
+  max-width: 1170px;
+  margin-right:auto;
+  margin-left: auto;
 }
-  
-  /* bottom: 0;
-  text-align: center; */
-
 .row{
   display: flex;
   flex-wrap: wrap;
