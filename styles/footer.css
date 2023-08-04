@@ -9,11 +9,6 @@ body{
   box-sizing: border-box;
 }
 .container{
-  max-width: 1170px;
-  margin-right:auto;
-  margin-left: auto;
-}
-.row{
   display: flex;
   flex-wrap: wrap;
 }
