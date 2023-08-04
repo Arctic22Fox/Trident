@@ -9,8 +9,13 @@ body{
   box-sizing: border-box;
 }
 .container{
-  display: flex;
-  flex-wrap: wrap;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 70px 0;
+  height: 2.5rem;
+  background-color: #24262b;          
+  text-align: center;  
 }
 ul{
   list-style: none;

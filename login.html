@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet" href="styles/footer.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/footer2.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"></script>
+    <title>Login/Signup</title>
 </head>
 <body>
     <nav>
         <ul class="menu">
           <img src="images/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
             <li class="logo"><a href="#">Trident </a></li>
-            <li class="item"><a href="template.html">Home</a></li>
+            <li class="item"><a href="home.html">Home</a></li>
             <li class="item"><a href="#">Map</a></li>
             <li class="item"><a href="#">Sports</a></li>
             <li class="item"><a href="login.html">Account</a></li>
@@ -23,8 +28,19 @@
         </ul>
     </nav>
     
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+<!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
 <div id="id01" class="modal">
   
@@ -52,7 +68,7 @@
       <span class="psw"><a href="#" id="password">Forgot password?</a></span>
     </div>
   </form>
-</div>
+</div> -->
 
 <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
 
@@ -61,7 +77,7 @@
   <form class="modal-content animate" action="/action_page.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="images/avatar_male.png" alt="Avatar" class="avatar">
+      <img src="images/logo.png" alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
@@ -87,37 +103,62 @@
   </form>
 </div>
 </div>
-<footer class="footer">
-    <div class="container">
-     <div class="row">
-       <div class="footer-col">
-         <h4>TicketFinder</h4>
-         <ul>
-           <li><a href="#">The Team</a></li>
-           <li><a href="#">Privacy Policy</a></li>
-           <li>Trident &copy; 2023</a></li>
-         </ul>
-       </div>
-       <div class="footer-col">
-         <h4>Get Help</h4>
-         <ul>
-           <li><a href="#">FAQ</a></li>
-           <li><a href="#">Payment Options</a></li>
-           <li><a href="#">Account</a></li>
-           <li><a href="#">Contact Us</a></li>
-         </ul>
-       </div>
-       <div class="footer-col">
-         <h4>Sports</h4>
-         <ul>
-           <li><a href="#">Football</a></li>
-           <li><a href="#">Rugby</a></li>
-           <li><a href="#">Motorsport</a></li>
-           <li><a href="#">Ice Hockey</a></li>
-         </ul>
-       </div>
-     </div>
+<footer>
+  <div class="footer">
+    <div class="contain">
+    <div class="col">
+      <h2>Company</h2>
+      <ul>
+        <li>About us</li>
+        <li> F.A.Q</li>
+        <li><a href="privacypolicy.html">Policies</a></li>
+      </ul>
     </div>
- </footer>
+    <div class="col">
+      <h2>Sports</h2>
+      <ul>
+        <li>Football</li>
+        <li>Rugby</li>
+        <li>Motorsport</li>
+        <li>Ice Hockey</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h2>Socials</h2>
+      <ul>
+        <li>GitHub</li>
+        <li>LinkedIn</li>
+        <li>Instagram</li>
+      </ul>
+    </div>
+   
+    <div class="col">
+      <h2>Contact</h2>
+      <ul>
+        <li>+44 07974 XXXXXX</li>
+        <li>+44 01942 XXXX</li>
+        <li>team@trident.uk</li>
+      </ul>
+    </div>
+    <div class="col address">
+      <h2>Address </h2>
+      <ul>
+        <li>Your mums basement</li>
+        
+    </ul>
+    </div>
+    <div class="col address">
+      
+      <ul>
+          <img src="images/logo.png" alt="Logo" width="25" height="20" class="d-inline-block align-text-top">
+          <li>Trident &copy; 2023</li>
+      </ul>
+  </div>
+    
+  <div class="clearfix"></div>
+  </div>
+  </div>
+</footer>
+<script src="javascript/nav.js"></script>
 </body>
 </html>
