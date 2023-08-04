@@ -1,5 +1,10 @@
 /* images */
-
+h3 {
+  background-color: #00171f;
+  color: #fff;
+  text-align: center;
+  word-wrap: normal;
+}
 div.gallery {
     /* float: left; */
     padding-top: 50px;
