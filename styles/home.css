@@ -1,17 +1,51 @@
+/* Typewriter */
+
+.typewriter {
+  background: #00171f;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.typewriter h3 {
+  font-size: 30px;
+  background-color: #00171f;
+  color: #fff;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #00a7e1; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 25% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #00a7e1 }
+}
+
 /* images */
-
-
 
 div.row {
 
     float: left;
 
-h3 {
+/* h3 {
   background-color: #00171f;
   color: #fff;
   text-align: center;
-  word-wrap: normal;
+  word-wrap: normal; */
 }
+
 div.gallery {
     /* float: left; */
 
@@ -29,8 +63,6 @@ div.gallery {
 
   div.row:hover {
     border: 1px solid #00a7e1;
-  }
-
     text-align: center;
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
   }
