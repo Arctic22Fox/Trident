@@ -1,18 +1,32 @@
-/* NAVBAR */
-/* NAVBAR */
-/* NAVBAR */
-/* NAVBAR */
-/* NAVBAR */
-/* NAVBAR */
+
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
   }
-  body {
+body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   
   }
+
+  h3 {
+    background: #00171f;
+    color: #fff;
+    padding-top: 50px;
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    
+  }
+
+
+/* NAVBAR */
+/* NAVBAR */
+/* NAVBAR */
+/* NAVBAR */
+/* NAVBAR */
+/* NAVBAR */
   nav {
     background: #00171f;
     padding: 5px 20px;
@@ -132,6 +146,71 @@
     }
   }
 
+/* MAP */
+/* MAP */
+/* MAP */
+/* MAP */
+
+
+
+
+/* IMAGES */
+/* IMAGES */
+/* IMAGES */
+/* IMAGES */
+
+
+  
+  div.row {
+
+    float: left;
+
+
+}
+
+div.gallery {
+    /* float: left; */
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: 0;
+    color: #fff;
+
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  }
+
+  div.row:hover {
+    border: 1px solid #00a7e1;
+    text-align: center;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  }
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
 /* ARTICLE */
 /* ARTICLE */
 /* ARTICLE */
@@ -158,7 +237,7 @@
     width: 100%;
     background-color: #00171f;
     padding: 10 10 0 10px;
-    position: absolute;
+    position: static;
     bottom: 0;
   }
   .footer .col {
@@ -200,6 +279,26 @@
   .clearfix {
     clear: both;
   }
+
+  @media only screen and (max-width: 700px) {
+    .responsive {
+      width: 49.99999%;
+      margin: 6px 0;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .responsive {
+      width: 100%;
+    }
+  }
+  
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
   @media only screen and (min-width: 1280px) {
     .contain {
       width: 1200px;
