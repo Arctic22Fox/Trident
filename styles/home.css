@@ -1,4 +1,15 @@
 /* images */
+
+
+header h3 {
+  background-color: #00171f;
+  color: #fff;
+  text-align: center;
+  word-wrap: normal;
+  font-size: xx-large;
+  padding: 50px
+}
+
 h3 {
   background-color: #00171f;
   color: #fff;
@@ -7,6 +18,7 @@ h3 {
 }
 div.gallery {
     /* float: left; */
+    background-color: #00171f;
     padding-top: 50px;
     padding-bottom: 50px;
     color: #fff;
@@ -31,6 +43,7 @@ div.desc {
 
 * {
   box-sizing: border-box;
+  background-color: #00171f;
 }
 
 .responsive {
