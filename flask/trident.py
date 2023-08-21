@@ -1,4 +1,4 @@
-from flask import Flask, Response, render_template, request
+from flask import Flask, Response, render_template, request, redirect
 from mimetypes import MimeTypes
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
