@@ -17,12 +17,12 @@
   <nav>
         <ul class="menu">
           <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-            <li class="logo"><a href="#">Trident</a></li>
-            <li class="item"><a href="#">Home</a></li>
-            <li class="item"><a href="#">Map</a></li>
-            <li class="item"><a href="#">Sports</a></li>
+            <li class="logo"><a href="{{ url_for('home') }}">Trident</a></li>
+            <li class="item"><a href="{{ url_for('home') }}">Home</a></li>
+            <li class="item"><a href="{{ url_for('maps') }}">Map</a></li>
+            <li class="item"><a href="{{ url_for('sports') }}">Sports</a></li>
             <li class="item"><a href="{{ url_for('login') }}">Account</a></li>
-            <li class="item"><a href="#">Contact</a></li>
+            <li class="item"><a href="{{ url_for('contact') }}">Contact</a></li>
         </li>
             <li class="toggle"><span class="bars"></span></li>
         </ul>

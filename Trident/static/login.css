@@ -51,11 +51,15 @@ img.avatar {
   border-radius: 50%;
 }
 
-.container {
+/* .container {
+  height: 500px;
+  background-image: url("../bgimg/{{ background_image_url }}");
   padding: 16px;
   background-color:#24262b;
-  color: #fefefe
-}
+  color: #fefefe;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
 
 span.psw {
   float: right;

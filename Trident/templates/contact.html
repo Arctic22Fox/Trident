@@ -1,34 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="styles/navbar.css"> -->
-    <!-- <link rel="stylesheet" href="styles/footer2.css"> -->
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/contact.css">
-    <link rel="stylesheet" href="styles/background.css">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
-    crossorigin="anonymous"></script>
-    <title>Contact</title>
-</head>
-<body>
-    <nav>
-        <ul class="menu">
-          <img src="images/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-            <li class="logo"><a href="#">Trident </a></li>
-            <li class="item"><a href="home.html">Home</a></li>
-            <li class="item"><a href="#">Map</a></li>
-            <li class="item"><a href="#">Sports</a></li>
-            <li class="item"><a href="login.html">Account</a></li>
-            <li class="item"><a href="#">Contact</a></li>
-        </li>
-            <li class="toggle"><span class="bars"></span></li>
-        </ul>
-    </nav>
+{% extends 'template.html' %}
+
+{% block body_content %}
+
 
     <div class="contact-form">
       <h1>Contact Us</h1>
@@ -46,71 +19,4 @@
       </form>
   </div>
 
-    <footer>
-      <div class="footer">
-        <div class="contain">
-        <div class="col">
-          <h2>Company</h2>
-          <ul>
-            <li>About us</li>
-            <li> F.A.Q</li>
-            <li>Policies</li>
-          </ul>
-        </div>
-        <div class="col">
-          <h2>Sports</h2>
-          <ul>
-            <li>Football</li>
-            <li>Rugby</li>
-            <li>Motorsport</li>
-            <li>Ice Hockey</li>
-          </ul>
-        </div>
-        <div class="col">
-          <h2>Socials</h2>
-          <ul>
-            <li>GitHub</li>
-            <li>LinkedIn</li>
-            <li>Instagram</li>
-          </ul>
-        </div>
-        <div class="col">
-          <h2>Team</h2>
-          <ul>
-            <li>Rob W.</li>
-            <li>Lou C.</li>
-            <li>Lewis C.</li>
-          </ul>
-        </div>
-        <div class="col">
-          <h2>Contact</h2>
-          <ul>
-            <li>+44 07974 XXXXXX</li>
-            <li>+44 01942 XXXX</li>
-            <li>team@trident.uk</li>
-          </ul>
-        </div>
-        <div class="col address">
-          <h2>Address </h2>
-          <ul>
-            <li>Your mums basement</li>
-            
-        </ul>
-        </div>
-        <div class="col address">
-          
-          <ul>
-              <img src="images/logo.png" alt="Logo" width="25" height="20" class="d-inline-block align-text-top">
-              <li>Trident &copy; 2023</li>
-          </ul>
-      </div>
-        
-      <div class="clearfix"></div>
-      </div>
-      </div>
-  </footer>
-  <script src="javascript/contact.js"></script>
-  <script src="javascript/background.js"></script>
-</body>
-
-</html>
+  {% endblock %}   

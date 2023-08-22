@@ -2,7 +2,8 @@
 
 {% block body_content %}
     
-    <div class="container">
+    <div class="container" style="height: 500px; background-image: url('../bgimg/{{ background_image_url }}'); padding: 16px; background-color: #24262b; color: #fefefe; background-repeat: no-repeat; background-size: cover;">
+      <!-- <img src="{{ url_for('static', filename='OldTrafford.jpg') }}" alt=""> -->
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required>
 
