@@ -33,7 +33,6 @@ def maps():
 def sports():
     return render_template('sports.html')
 
-
 @app.route('/login')
 
 def login():

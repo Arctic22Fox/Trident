@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='contact.css')}}">
+        
+     </head>
+
+
 {% extends 'template.html' %}
 
 {% block body_content %}
@@ -18,5 +26,8 @@
           <button type="submit">Submit</button>
       </form>
   </div>
-
+  <script type="text/javascript" src="{{ url_for('static', filename='js/background.js')}}"></script>
   {% endblock %}   
+  
+  
+  </html>

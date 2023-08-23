@@ -1,13 +1,13 @@
 $(document).ready(function(){
-    var images=['images/AllianzPark.jpg',
-                'images/AshtonGate.jpg',
-                'images/MotorpointArena.jpg',
-                'images/OldTrafford.jpg',
-                'images/SandyPark.jpg',
-                'images/SSEArena.jpg',
-                'images/StamfordBridge.jpeg',
-                'images/TheKop.jpg',
-                'images/UtilitaArena.jpg',];
+    var images=['static/bgimg/AllianzPark.jpg',
+                'static/bgimg/AshtonGate.jpg',
+                'static/bgimg/MotorpointArena.jpg',
+                'static/bgimg/OldTrafford.jpg',
+                'static/bgimg/SandyPark.jpg',
+                'static/bgimg/SSEArena.jpg',
+                'static/bgimg/StamfordBridge.jpeg',
+                'static/bgimg/TheKop.jpg',
+                'static/bgimg/UtilitaArena.jpg',];
     
     var randomNumber = Math.floor(Math.random() * images.length);
     var bgImg = 'url(' + images[randomNumber] + ')';
