@@ -5,7 +5,7 @@
 <div class="login-form">
   <script type="text/javascript" src="{{ url_for('static', filename='js/background.js')}}"></script>
   <h1>User Login</h1>
-  <form id="loginForm">
+  <form action="/login" method="POST" id="loginForm">
       <label for="name">Username:</label>
       <input type="text" id="username" name="username" required>
       

@@ -1,12 +1,11 @@
 from flask import *
 import os
+import logging
 import pymysql
-from flask import Flask
-from flask import url_for
-from flask import request
 from passlib.hash import sha256_crypt
 import re
-from flask import render_template
+import random
+
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config['SECRET_KEY'] = 'secret!'
@@ -36,11 +35,6 @@ def maps():
 
 def sports():
     return render_template('sports.html')
-
-@app.route('/login')
-
-def login():
-    return render_template('login.html')
 
 
 @app.route('/signup')
@@ -95,6 +89,34 @@ def registration():
             return redirect(url_for('login'))
 
     return render_template('registration.html', msg=msg)
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    msg = ''
+    if request.method == 'POST':
+        username = request.form['username']
+        password_candidate = request.form['password']
+        conn = Connection()
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
+        users = cursor.fetchone()
+        
+        app.logger.debug(f"Users: {users}")  # Add this line for debugging
+        
+        if users:
+            password = users[6]  # Assuming password is in the 7th column
+            app.logger.debug(f"Stored Password: {password}")  # Add this line for debugging
+            
+            if sha256_crypt.verify(password_candidate, password):
+                session['logged_in'] = True
+                session['username'] = username
+                app.logger.debug("Login successful!")  # Add this line for debugging
+                return redirect(url_for('home'))
+            else:
+                msg = 'Invalid credentials!'
+        else:
+            msg = 'Username not found!'
+    return render_template('login.html', msg=msg)
 
 if __name__ == '__main__':
     app.run(debug=True)
