@@ -17,43 +17,11 @@
       
         <button type="submit">Submit</button>
       
-      
-      <button class="signup" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
+        
+      <button class="signup" style="width:auto;"><a href="{{ url_for('registration') }}">Sign Up</a></button><label for="signup"> Not Signed Up?</label>
     </form>
-  </div>
-      
   
-
-<div id="id02" class="modal">
-
-  <form class="modal-content animate" action="/action_page.php" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Avatar" class="avatar">
-    </div>
-
-    <div class="container">
-      <label for="fname"><b>Full Name</b></label>
-      <input type="text" placeholder="Enter Full Name" name="fname" required>
-
-      <label for="email"><b>Email</b></label>
-<input type="email" placeholder="Enter Email" name="email" required class="modal-input">
-
-<label for="psw"><b>Password</b></label>
-<input type="password" placeholder="Enter Password" name="psw" required class="modal-input">
-
-<label for="psw-repeat"><b>Repeat Password</b></label>
-<input type="password" placeholder="Repeat Password" name="psw-repeat" required class="modal-input">
-
-
-      <button type="submit">Sign Up</button>
-      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-    </div>
-
-    
-  </form>
 </div>
-</div>
-</div>
+
 <script src="{{ url_for('static', filename='js/login.js') }}"></script>
 {% endblock %}
