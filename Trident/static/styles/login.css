@@ -1,7 +1,31 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+.login-form {
+  margin-top: 50px;
+  margin-bottom: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
 
+/* labels for email, name and message. change font size or colour
+label {
+  font-weight: bold;
+} */
+
+input, textarea {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;}
+
+  
 /* Full-width input fields */
 input[type=text], input[type=password] {
   width: 100%;
@@ -23,7 +47,8 @@ button {
   width: 100%;
 }
 button .signup {
-  display: flex;
+  display:block;
+  left: 25%;
   justify-content: center;
   cursor: pointer;
 }
@@ -51,15 +76,16 @@ img.avatar {
   border-radius: 50%;
 }
 
-/* .container {
+.container {
   height: 500px;
-  background-image: url("../bgimg/{{ background_image_url }}");
-  padding: 16px;
+  width: 400px;
+  padding: 10px;
   background-color:#24262b;
   color: #fefefe;
   background-repeat: no-repeat;
   background-size: cover;
-} */
+  
+}
 
 span.psw {
   float: right;
@@ -151,3 +177,5 @@ span.psw {
     color: #fefefe;
 }
 
+
+  

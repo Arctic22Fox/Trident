@@ -5,8 +5,12 @@
     padding: 0;
     margin: 0;
   }
+  html {
+    height: 100%;
+  }
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100%;
    
   }
 
@@ -150,7 +154,10 @@ body {
 /* MAP */
 /* MAP */
 /* MAP */
-
+.maps{
+  width: 100%;
+  height: 80%;
+}
 
 
 
@@ -234,10 +241,11 @@ div.desc {
 
 
 .footer {
+    
     width: 100%;
     background-color: #00171f;
     padding: 10 10 0 10px;
-    position: static;
+    position:static;
     bottom: 0;
   }
   .footer .col {

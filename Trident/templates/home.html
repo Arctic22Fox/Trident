@@ -3,14 +3,16 @@
 {% block body_content %}
 
 <div class="header">
+  
   <h3>Welcome to Trident! <br> The sports events ticketing platform!</h3>
 </div>
 
 <container>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/background.js')}}"></script>
   <div class="responsive">
     <div class="gallery">
-      <a target="_blank" href="{{ url_for('static', filename='soccer.jpg') }}">
-        <img src="{{ url_for('static', filename='soccer.jpg') }}" alt="soccer" width="600" height="400">
+      <a target="_blank" href="{{ url_for('static', filename='images/soccer.jpg') }}">
+        <img src="{{ url_for('static', filename='images/soccer.jpg') }}" alt="soccer" width="600" height="400">
       </a>
       <div class="desc">Football</div>
     </div>
@@ -18,8 +20,8 @@
 
   <div class="responsive">
     <div class="gallery">
-      <a target="_blank" href="{{ url_for('static', filename='icehockey.jpg') }}">
-        <img src="{{ url_for('static', filename='icehockey.jpg') }}" alt="ice hockey" width="600" height="400">
+      <a target="_blank" href="{{ url_for('static', filename='images/icehockey.jpg') }}">
+        <img src="{{ url_for('static', filename='images/icehockey.jpg') }}" alt="ice hockey" width="600" height="400">
       </a>
       <div class="desc">Ice Hockey</div>
     </div>
@@ -27,8 +29,8 @@
 
   <div class="responsive">
     <div class="gallery">
-      <a target="_blank" href="{{ url_for('static', filename='rugby.jpg') }}">
-        <img src="{{ url_for('static', filename='rugby.jpg') }}" alt="rugby" width="600" height="400">
+      <a target="_blank" href="{{ url_for('static', filename='imagesrugby.jpg') }}">
+        <img src="{{ url_for('static', filename='images/rugby.jpg') }}" alt="rugby" width="600" height="400">
       </a>
       <div class="desc">Rugby</div>
     </div>
@@ -36,8 +38,8 @@
 
   <div class="responsive">
     <div class="gallery">
-      <a target="_blank" href="{{ url_for('static', filename='motorsports.jpg') }}">
-        <img src="{{ url_for('static', filename='motorsports.jpg') }}" alt="motorsports" width="600" height="400">
+      <a target="_blank" href="{{ url_for('static', filename='images/motorsports.jpg') }}">
+        <img src="{{ url_for('static', filename='images/motorsports.jpg') }}" alt="motorsports" width="600" height="400">
       </a>
       <div class="desc">Motorsports</div>
     </div>

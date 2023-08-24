@@ -2,27 +2,34 @@
 
 {% block body_content %}
     
-    <div class="container" style="height: 500px; background-image: url('../bgimg/{{ background_image_url }}'); padding: 16px; background-color: #24262b; color: #fefefe; background-repeat: no-repeat; background-size: cover;">
-      <!-- <img src="{{ url_for('static', filename='OldTrafford.jpg') }}" alt=""> -->
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
+<div class="login-form">
+  <script type="text/javascript" src="{{ url_for('static', filename='js/background.js')}}"></script>
+  <h1>User Login</h1>
+  <form id="loginForm">
+      <label for="name">Username:</label>
+      <input type="text" id="username" name="username" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      
+      
+      
+      
+        <button type="submit">Submit</button>
+      
       
       <button class="signup" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
+    </form>
+  </div>
+      
+  
 
 <div id="id02" class="modal">
 
   <form class="modal-content animate" action="/action_page.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="{{ url_for('static', filename='logo.png') }}" alt="Avatar" class="avatar">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
@@ -40,14 +47,13 @@
 
 
       <button type="submit">Sign Up</button>
-    </div>
-
-    <div class="container">
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
+
+    
   </form>
 </div>
 </div>
 </div>
-<script type="text/javascript" src="{{ url_for('static', filename='js/background.js')}}"></script>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
 {% endblock %}
