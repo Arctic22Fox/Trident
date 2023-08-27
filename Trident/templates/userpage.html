@@ -1,0 +1,12 @@
+{% extends 'template.html' %}
+
+{% block body_content %}
+<div class="User-page">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/background.js')}}"></script>
+    <h1>User Information</h1>
+    <p><strong>Username:</strong> {{ users[1] }}</p>
+    <p><strong>First Name:</strong> {{ users[2] }}</p>
+    <p><strong>Last Name:</strong> {{ users[3] }}</p>
+    <p><strong>Address:</strong> {{ users[4] }}</p>
+</div>
+{% endblock %}

@@ -5,6 +5,7 @@ import pymysql
 from passlib.hash import sha256_crypt
 import re
 import random
+from flask import flash
 
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
@@ -47,6 +48,17 @@ def signup():
 def contact():
     return render_template('contact.html')
 
+@app.route('/userpage')
+def userpage():
+    if 'username' in session and session['logged_in']:
+        username = session['username']
+        conn = Connection()
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
+        users = cursor.fetchone()
+        if users:
+            return render_template('userpage.html', users=users)
+    return redirect(url_for('login'))
 
 def Connection():
     server = 'localhost'
@@ -60,7 +72,8 @@ def Connection():
 
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
-    msg = ''
+    msg = ''  # Initialize an empty message for displaying feedback
+    
     if request.method == 'POST':
         username = request.form['username']
         FirstName = request.form['FirstName']
@@ -69,23 +82,30 @@ def registration():
         city = request.form['city']
         password = sha256_crypt.encrypt(request.form['password'])
         email = request.form['email']
+        
         conn = Connection()
         cursor = conn.cursor()
+        
+        # Check if the username already exists
         cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
         users = cursor.fetchone()
+        
         if users:
             msg = 'Account already exists!'
         elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
             msg = 'Invalid email Address!'
         elif not re.match(r'[A-Za-z0-9]+', username):
             msg = 'Username must contain only characters and numbers!'
-        elif not username or not password or not email:
+        elif not (username and FirstName and LastName and Address and city and password and email):
             msg = 'Please fill out the form!'
         else:
+            # Insert the new user's information into the database
             cursor.execute("INSERT INTO users (username, FirstName, LastName, Address, City, password, email) VALUES (%s, %s, %s, %s, %s, %s, %s)",
                            (username, FirstName, LastName, Address, city, password, email))
             conn.commit()
             msg = 'Registration successful!'
+            
+            # Redirect the user to the login page after successful registration
             return redirect(url_for('login'))
 
     return render_template('registration.html', msg=msg)
