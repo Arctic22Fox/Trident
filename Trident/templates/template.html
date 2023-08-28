@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Template</title>
+    <title>{{title}} - Page</title>
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
     <link rel="stylesheet" href="{{url_for('static', filename='styles/main.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='styles/login.css')}}">
@@ -37,7 +37,7 @@
       
         <footer>
 <div class="footer" style="position: absolute; bottom: 0;">
-          <div class="contain">
+          <!-- <div class="contain"> -->
             <div class="col">
               <h2>Company</h2>
                 <ul>
@@ -59,7 +59,8 @@
             <h2>Socials</h2>
               <ul>
                 <li>GitHub</li>
-                <i class="fa-brands fa-linkedin" style="color: #ffffff;"></i><li>LinkedIn</li></i>
+                <!-- needs to be finished -->
+                <i class="fa-brands fa-linkedin" style="color: #ffffff;"> <li>LinkedIn</li></i>
                 <li>Instagram</li>
               </ul>
           </div>
@@ -72,14 +73,14 @@
                 <li>team@trident.uk</li>
               </ul>
           </div>
-          <div class="col address">
+          <div class="col">
             <h2>Address </h2>
               <ul>
                 <li>Somewhere</li>
           
               </ul>
           </div>
-          <div class="col address">
+          <div class="col">
         
             <ul>
               <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" width="25" height="20" class="d-inline-block align-text-top">
@@ -88,7 +89,7 @@
           </div>
       
           <div class="clearfix"></div>
-</div>
+<!-- </div> -->
   
     </div>
         </footer>

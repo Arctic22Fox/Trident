@@ -11,42 +11,42 @@ from flask import flash
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config['SECRET_KEY'] = 'secret!'
 
-@app.route('/index')
-def index():
-    background_images_folder = os.path.join(app.static_folder, 'bgimg')
-    image_files = [f for f in os.listdir(background_images_folder) if f.endswith(('jpg', 'png', 'jpeg'))]
-    if not image_files:
-        return "No background images found."
-    random_image = random.choice(image_files)
-    background_image_url = f"static/bgimg/{random_image}"
-    print(background_image_url)  # Check if the URL is correct
-    return render_template('index.html', background_image_url=background_image_url)
+# @app.route('/index')
+# def index():
+#     background_images_folder = os.path.join(app.static_folder, 'bgimg')
+#     image_files = [f for f in os.listdir(background_images_folder) if f.endswith(('jpg', 'png', 'jpeg'))]
+#     if not image_files:
+#         return "No background images found."
+#     random_image = random.choice(image_files)
+#     background_image_url = f"static/bgimg/{random_image}"
+#     print(background_image_url)  # Check if the URL is correct
+#     return render_template('index.html', background_image_url=background_image_url)
 
 @app.route('/')
 
 def home():
-    return render_template('home.html')
+    return render_template('home.html', title ='Home')
 
 @app.route('/maps')
 
 def maps():
-    return render_template('maps.html')
+    return render_template('maps.html', title ='Maps')
 
 @app.route('/sports')
 
 def sports():
-    return render_template('sports.html')
+    return render_template('sports.html', title ='Sports')
 
 
 @app.route('/signup')
 
 def signup():
-    return render_template('signup.html')
+    return render_template('signup.html', title ='Signup')
 
 @app.route('/contact')
 
 def contact():
-    return render_template('contact.html')
+    return render_template('contact.html', title ='Contact')
 
 @app.route('/userpage')
 def userpage():
@@ -57,7 +57,7 @@ def userpage():
         cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
         users = cursor.fetchone()
         if users:
-            return render_template('userpage.html', users=users)
+            return render_template('userpage.html', users=users, title ='Userpage')
     return redirect(url_for('login'))
 
 def Connection():
@@ -108,7 +108,7 @@ def registration():
             # Redirect the user to the login page after successful registration
             return redirect(url_for('login'))
 
-    return render_template('registration.html', msg=msg)
+    return render_template('registration.html', msg=msg, title ='Registration')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -136,7 +136,7 @@ def login():
                 msg = 'Invalid credentials!'
         else:
             msg = 'Username not found!'
-    return render_template('login.html', msg=msg)
+    return render_template('login.html', msg=msg, title ='login')
 
 if __name__ == '__main__':
     app.run(debug=True)
