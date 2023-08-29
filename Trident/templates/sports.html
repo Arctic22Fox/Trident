@@ -1,0 +1,40 @@
+{% extends 'template.html' %}
+
+{% block body_content %}
+    
+<container>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/background.js')}}"></script>
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="{{ url_for('static', filename='images/football.jpg') }}">
+        <img src="{{ url_for('static', filename='images/football.jpg') }}" alt="football" width="600" height="400">
+      </a>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="{{ url_for('static', filename='images/icehockey.jpg') }}">
+        <img src="{{ url_for('static', filename='images/icehockey.jpg') }}" alt="ice hockey" width="600" height="400">
+      </a>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="{{ url_for('static', filename='imagesrugby.jpg') }}">
+        <img src="{{ url_for('static', filename='images/rugby.jpg') }}" alt="rugby" width="600" height="400">
+      </a>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="{{ url_for('static', filename='images/comingsoon.jpg') }}">
+        <img src="{{ url_for('static', filename='images/comingsoon.jpg') }}" alt="coming soon" width="600" height="400">
+      </a>
+    </div>
+  </div>
+</container>
+
+    {% endblock %}
