@@ -6,19 +6,19 @@
   <script type="text/javascript" src="{{ url_for('static', filename='js/background.js')}}"></script>
   <h1>User Login</h1>
   <form action="/login" method="POST" id="loginForm">
-      <label for="name">Username:</label>
-      <input type="text" id="username" name="username" required>
+      <label id="name"><input type="text" id="username" name="username" required autocomplete="username">Username:</label>
       
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+      
+      <label id="password"><input type="password" id="password" name="password" required>Password:</label>
+      
       
       
       
       
         <button type="submit">Submit</button>
       
-        
-      <button class="signup" style="width:auto;"><a href="{{ url_for('registration') }}">Sign Up</a></button><label for="signup"> Not Signed Up?</label>
+        <div id="signup"> Not Signed Up?</div>    
+          <button class="signup" style="width:auto;"><a href="{{ url_for('registration') }}">Sign Up</a></button>
     </form>
   
 </div>
