@@ -152,9 +152,6 @@ def login():
             msg = 'Username not found!'
     return render_template('login.html', msg=msg, title ='login')
 
-@app.route('/test')
-def test():
-    return render_template('test.html', title ='Test')
 
 if __name__ == '__main__':
     app.run(debug=True)
