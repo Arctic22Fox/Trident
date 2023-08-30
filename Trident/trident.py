@@ -37,6 +37,20 @@ def maps():
 def sports():
     return render_template('sports.html', title ='Sports')
 
+@app.route('/football')
+
+def football():
+    return render_template('football.html', title ='Football')
+
+@app.route('/icehockey')
+
+def icehockey():
+    return render_template('icehockey.html', title ='Ice Hockey')
+
+@app.route('/rugby')
+
+def rugby():
+    return render_template('rugby.html', title ='Rugby')
 
 @app.route('/signup')
 
@@ -137,6 +151,10 @@ def login():
         else:
             msg = 'Username not found!'
     return render_template('login.html', msg=msg, title ='login')
+
+@app.route('/test')
+def test():
+    return render_template('test.html', title ='Test')
 
 if __name__ == '__main__':
     app.run(debug=True)
