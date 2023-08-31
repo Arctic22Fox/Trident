@@ -8,5 +8,7 @@
     <p><strong>First Name:</strong> {{ users[2] }}</p>
     <p><strong>Last Name:</strong> {{ users[3] }}</p>
     <p><strong>Address:</strong> {{ users[4] }}</p>
+    <!-- <p><a href="{{url_for('logout')}}">logout</a></p> -->
+    <a href="{{url_for('logout')}}"><button type="submit" name="submit" method="POST">Sign Out</button></a>
 </div>
 {% endblock %}

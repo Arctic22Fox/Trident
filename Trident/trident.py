@@ -25,7 +25,7 @@ app.config['SECRET_KEY'] = 'secret!'
 @app.route('/')
 
 def home():
-    return render_template('home.html', title ='Home')
+    return render_template('home.html', title ='Home', login = url_for('login'), Account = 'Login')
 
 @app.route('/maps')
 
@@ -62,17 +62,7 @@ def signup():
 def contact():
     return render_template('contact.html', title ='Contact')
 
-@app.route('/userpage')
-def userpage():
-    if 'username' in session and session['logged_in']:
-        username = session['username']
-        conn = Connection()
-        cursor = conn.cursor()
-        cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
-        users = cursor.fetchone()
-        if users:
-            return render_template('userpage.html', users=users, title ='Userpage')
-    return redirect(url_for('login'))
+
 
 def Connection():
     server = 'localhost'
@@ -83,6 +73,45 @@ def Connection():
     conn = pymysql.connect(host=server, user=user, password=password, database=db)
     conn.autocommit(True)
     return conn
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    msg = ''
+    
+    if request.method == 'POST':
+        username = request.form['username']
+        password_candidate = request.form['password']
+        conn = Connection()
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
+        users = cursor.fetchone()
+        
+        app.logger.debug(f"Users: {users}")  # Add this line for debugging
+        
+        if users:
+            password = users[6]  # Assuming password is in the 7th column
+            app.logger.debug(f"Stored Password: {password}")  # Add this line for debugging
+            
+            if sha256_crypt.verify(password_candidate, password):
+                session['logged_in'] = True
+                session['username'] = username
+                app.logger.debug("Login successful!")  # Add this line for debugging
+                return render_template('home.html', login = url_for('userpage'), Account = 'My Account' )
+            else:
+                msg = 'Invalid credentials!'
+        else:
+            msg = 'Username not found!'
+    return render_template('login.html', msg=msg, title ='login', login = url_for('login'), Account = 'Login')
+
+@app.route('/logout', methods = ['POST', 'GET'])
+def logout():
+    session.pop('logged_in', None)
+    flash('You were logged out.')
+    if request.method == 'POST':
+        return render_template('login.html', msg='', title ='login', login = url_for('login'), Account = 'Login')
+    return render_template('login.html', msg='', title ='login', login = url_for('login'), Account = 'Login')
+    
 
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
@@ -124,34 +153,21 @@ def registration():
 
     return render_template('registration.html', msg=msg, title ='Registration')
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    msg = ''
-    if request.method == 'POST':
-        username = request.form['username']
-        password_candidate = request.form['password']
+
+
+
+
+@app.route('/userpage')
+def userpage():
+    if 'username' in session and session['logged_in']:
+        username = session['username']
         conn = Connection()
         cursor = conn.cursor()
         cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
         users = cursor.fetchone()
-        
-        app.logger.debug(f"Users: {users}")  # Add this line for debugging
-        
         if users:
-            password = users[6]  # Assuming password is in the 7th column
-            app.logger.debug(f"Stored Password: {password}")  # Add this line for debugging
-            
-            if sha256_crypt.verify(password_candidate, password):
-                session['logged_in'] = True
-                session['username'] = username
-                app.logger.debug("Login successful!")  # Add this line for debugging
-                return redirect(url_for('home'))
-            else:
-                msg = 'Invalid credentials!'
-        else:
-            msg = 'Username not found!'
-    return render_template('login.html', msg=msg, title ='login')
-
+            return render_template('userpage.html', users=users, title ='Userpage')
+    return redirect(url_for('login'))
 
 if __name__ == '__main__':
     app.run(debug=True)

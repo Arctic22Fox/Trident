@@ -17,7 +17,7 @@ body {
   h3 {
     background: #00171f;
     color: #fff;
-    padding-top: 50px;
+    /* padding-top: 50px; */
     display:flex;
     justify-content: center;
     text-align: center;
