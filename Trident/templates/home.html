@@ -3,8 +3,12 @@
 {% block body_content %}
 
 <div class="header">
-  
+  {% if 'logged_in' in session and session['logged_in'] %}
+  <h3>Welcome {{ session['username'] }} to Trident!  <br> The sports events ticketing platform!</h3>
+  {% else %}
   <h3>Welcome to Trident! <br> The sports events ticketing platform!</h3>
+  {% endif %}
+  
 
   
   <container>

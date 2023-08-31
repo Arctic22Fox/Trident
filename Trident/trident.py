@@ -23,10 +23,13 @@ app.config['SECRET_KEY'] = 'secret!'
 #     return render_template('index.html', background_image_url=background_image_url)
 
 @app.route('/')
-
 def home():
-    return render_template('home.html', title ='Home', login = url_for('login'), Account = 'Login')
+    if 'loggedin' in session and session['loggedin'] == True:
+        account_name = 'username'
+    else:
+        account_name = 'Login'
 
+    return render_template('home.html', title='Home', login=url_for('login'), Account=account_name)
 @app.route('/maps')
 
 def maps():
