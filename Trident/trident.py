@@ -6,21 +6,19 @@ from passlib.hash import sha256_crypt
 import re
 import random
 from flask import flash
-
+from forms import ContactForm
+from flask_mail import Mail, Message
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
-app.config['SECRET_KEY'] = 'secret!'
+app.secret_key = 'secret!'
 
-# @app.route('/index')
-# def index():
-#     background_images_folder = os.path.join(app.static_folder, 'bgimg')
-#     image_files = [f for f in os.listdir(background_images_folder) if f.endswith(('jpg', 'png', 'jpeg'))]
-#     if not image_files:
-#         return "No background images found."
-#     random_image = random.choice(image_files)
-#     background_image_url = f"static/bgimg/{random_image}"
-#     print(background_image_url)  # Check if the URL is correct
-#     return render_template('index.html', background_image_url=background_image_url)
+mail = Mail()
+app.config["MAIL_SERVER"] = "smtp.gmail.com"
+app.config["MAIL_PORT"] = 465
+app.config["MAIL_USE_SSL"] = True
+app.config["MAIL_USERNAME"] = 'tr1d3nt2023@gmail.com'
+app.config["MAIL_PASSWORD"] = 'iqsyfstvqdvbbcac'
+mail.init_app(app)
 
 @app.route('/')
 def home():
@@ -60,10 +58,26 @@ def rugby():
 def signup():
     return render_template('signup.html', title ='Signup')
 
-@app.route('/contact')
-
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    return render_template('contact.html', title ='Contact')
+  form = ContactForm()
+  if request.method == 'POST':
+    if form.validate() == False:
+      flash('All fields are required.')
+      return render_template('contact.html', form=form)
+    else:
+      msg = Message(form.subject.data, sender='contact@example.com', recipients=[app.config['MAIL_USERNAME']])
+      msg.body = """ 
+From: %s &lt;%s&gt; 
+%s 
+""" % (form.name.data, form.email.data, form.message.data)
+      mail.send(msg)
+      return render_template('contact.html', success=True)
+  elif request.method == 'GET':
+    return render_template('contact.html', form=form, title ='Contact')
+    
+
+    
 
 
 
@@ -112,7 +126,7 @@ def logout():
     session.pop('logged_in', None)
     flash('You were logged out.')
     if request.method == 'POST':
-        return render_template('login.html', msg='', title ='login', login = url_for('login'), Account = 'Login')
+        return render_template('login.html', msg='Successfully logged out!', title ='login', login = url_for('login'), Account = 'Login')
     return render_template('login.html', msg='', title ='login', login = url_for('login'), Account = 'Login')
     
 
