@@ -4,33 +4,15 @@
 
 <div class="header">
   {% if 'logged_in' in session and session['logged_in'] %}
-  <h3>Welcome {{ session['username'] }} to Trident!  <br> The sports events ticketing platform!</h3>
+  <h3>Welcome  to Trident!  <br>{{ session['username'] }}<br> The sports events ticketing platform!</h3>
   {% else %}
-  <h3>Welcome to Trident! <br> The sports events ticketing platform!</h3>
+  <h3>Welcome to Trident! <br><br> The sports events ticketing platform!</h3>
   {% endif %}
-  
-
-  
-  <container>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/background.js')}}"></script>
-  
-  </container>
+  <div >
+  <video loop muted width="2160" height="1080">
+  <source src="{{ url_for('static', filename='Trident.mp4') }}" type="video/mp4" alt="video of sports">
+</video>
+ </div>
 </div>
-
-<h2>Football</h2>
-<table>
-
-</table>
-
-<h2>Ice Hockey</h2>
-<table>
-
-
-</table>
-
-<h2>Rugby</h2>
-<table>
-
-</table>
 
 {% endblock %}

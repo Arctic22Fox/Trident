@@ -9,6 +9,25 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/background.js')}}"></script>
     <h1>User Registration</h1>
     <form action="/registration" method="POST">
+        
+        
+        {% with messages = get_flashed_messages() %}
+        
+        {% if messages %}
+        
+        <ul class="flash-messages">
+        
+        {% for message in messages %}
+        
+        <li><strong>{{ message }}</strong></li>
+        
+        {% endfor %}
+        
+        </ul>
+        
+        {% endif %}
+        {% endwith %}
+        
         <label for="username">Username:</label>
         <input type="text" name="username" id="username" required autocomplete="username"><br>
 

@@ -137,13 +137,14 @@ def registration():
         users = cursor.fetchone()
         
         if users:
-            msg = 'Account already exists!'
+            flash('Account already exists!', 'error')
+
         elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
-            msg = 'Invalid email Address!'
+            flash('Invalid email Address!', 'error')
         elif not re.match(r'[A-Za-z0-9]+', username):
-            msg = 'Username must contain only characters and numbers!'
+            flash('Username must contain only characters and numbers!', 'error')
         elif not (username and FirstName and LastName and Address and city and password and email):
-            msg = 'Please fill out the form!'
+            flash('Please fill out the form!', 'error')
         else:
             # Insert the new user's information into the database
             cursor.execute("INSERT INTO users (username, FirstName, LastName, Address, City, password, email) VALUES (%s, %s, %s, %s, %s, %s, %s)",
@@ -171,6 +172,7 @@ def userpage():
         if users:
             return render_template('userpage.html', users=users, title ='Userpage')
     return redirect(url_for('login'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
