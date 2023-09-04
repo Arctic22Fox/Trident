@@ -1,0 +1,8 @@
+flask
+pymysql
+passlib.hash
+re
+random
+forms
+flask_mail
+wtforms

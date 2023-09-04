@@ -8,4 +8,3 @@ $(function() {
     });
 });
 
-document.querySelector('video').play();

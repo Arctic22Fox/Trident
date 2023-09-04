@@ -75,11 +75,6 @@ From: %s &lt;%s&gt;
       return render_template('contact.html', success=True)
   elif request.method == 'GET':
     return render_template('contact.html', form=form, title ='Contact')
-    
-
-    
-
-
 
 def Connection():
     server = 'localhost'
