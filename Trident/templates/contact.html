@@ -38,11 +38,12 @@
         {{ form.subject }}
         {{ form.message.label }}
         {{ form.message }}
-        {{ form.submit }}
+        {{ form.submit}}
       </form>
       {% endif %}
   </div>
   <script type="text/javascript" src="{{ url_for('static', filename='js/background.js')}}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/email.js')}}"></script>
   {% endblock %}   
   
   

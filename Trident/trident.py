@@ -182,6 +182,9 @@ def userpage():
             return render_template('userpage.html', users=users, title ='Userpage')
     return redirect(url_for('login'))
 
+app.route('/football')
+def football():
+    return render_template('football.html', title ='Football')
 
 if __name__ == '__main__':
     app.run(debug=True)
