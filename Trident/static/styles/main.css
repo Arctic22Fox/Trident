@@ -180,7 +180,6 @@ input[type= "submit"] {
   width: 100%;
   height: 100%;
   
-
 }
 
 .row::after {
@@ -189,16 +188,19 @@ input[type= "submit"] {
   display: table;
 }
 
-.football-column{
+.logo-column{
   float: left;
-  width: 33.33%;
   padding: 5px;
-  
+  box-sizing: content-box;
+  background-color: rgb(255, 255, 255, 0.5);
+  ba
 }
+
 /* MAP */
 /* MAP */
 /* MAP */
 /* MAP */
+
 .maps{
   position: absolute;
   top: 100px;
@@ -213,6 +215,7 @@ input[type= "submit"] {
 /* Video */
 /* Video */
 /* Video */
+
 video{
   width: 100%;
   object-fit: cover;
