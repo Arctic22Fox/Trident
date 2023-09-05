@@ -1,0 +1,30 @@
+{% extends 'template.html' %}
+
+
+{% block body_content %}
+
+
+
+
+  <div class="header">
+    {% if 'logged_in' in session and session['logged_in'] %}
+    <h3>Welcome  to Trident!  <br>{{ session['username'] }}<br> The sports events ticketing platform!</h3>
+    {% else %}
+    <h3>Welcome to Trident! <br><br> The sports events ticketing platform!</h3>
+    {% endif %}
+  </div>
+  
+
+    <video class="content" loop muted>
+      <source src="{{ url_for('static', filename='Trident.mp4') }}" type="video/mp4" alt="video of sports">
+    </video>
+
+
+  
+</div>
+  
+
+
+
+<script src="{{ url_for('static', filename='js/homevideo.js') }}"></script>
+{% endblock %}

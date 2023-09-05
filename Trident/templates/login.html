@@ -1,0 +1,27 @@
+{% extends 'template.html' %}
+
+{% block body_content %}
+   
+<div class="login-form">
+  <script type="text/javascript" src="{{ url_for('static', filename='js/background.js')}}"></script>
+  <h1>User Login</h1>
+  <form action="/login" method="POST" id="loginForm">
+      <label id="name"><input type="text" id="username" name="username" required autocomplete="username">Username:</label>
+      
+      
+      <label id="password"><input type="password" id="password" name="password" required>Password:</label>
+      
+      
+      
+      
+      
+        <button type="submit">Submit</button>
+      
+        <div id="signup"> Not Signed Up?</div>    
+          <button class="signup" style="width:auto;"><a href="{{ url_for('registration') }}">Sign Up</a></button>
+    </form>
+  
+</div>
+
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+{% endblock %}
