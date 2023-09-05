@@ -192,11 +192,12 @@ input[type= "submit"] {
   display: table;
 }
 
-.football-column{
+.logo-column{
   float: left;
   width: 33.33%;
   padding: 5px;
-  
+  background-color: rgb(255, 255, 255, 0.5);
+  box-sizing: content-box;
 }
 /* MAP */
 /* MAP */
