@@ -22,10 +22,10 @@
       <li class="item"><a href="{{ url_for('home') }}">Home</a></li>
       <li class="item"><a href="{{ url_for('maps') }}">Map</a></li>
       <li class="item"><a href="{{ url_for('sports') }}">Sports</a></li>
-      {% if 'logged_in' in session and session['logged_in'] %}
-        <li class="item"><a href="{{ url_for('userpage') }}">{{ session['username'] }}</a></li>
+      {% if 'logged_in' in session %}
+      <li class="item"><a href="{{ url_for('userpage') }}">{{ session['username'] }}</a></li>
       {% else %}
-        <li class="item"><a href="{{ login }}">Login</a></li>
+      <li class="item"><a href="{{ url_for('login') }}">Login</a></li>
       {% endif %}
       <li class="item"><a href="{{ url_for('contact') }}">Contact</a></li>
       <li class="toggle"><span class="bars"></span></li>
