@@ -176,9 +176,9 @@ input[type= "submit"] {
 }
 
 /* logo styling */
-.football-row {
-  display: grid;
-  grid-template-columns: auto auto auto;
+.logo-row {
+  /* display: grid; */
+  /* grid-template-columns: auto auto auto; */
   gap: 10px;
   width: 80;
   height: 80;
@@ -194,8 +194,8 @@ input[type= "submit"] {
 
 .logo-column{
   float: left;
-  width: 33.33%;
   padding: 5px;
+  margin: 10px;
   background-color: rgb(255, 255, 255, 0.5);
   box-sizing: content-box;
 }
