@@ -2,16 +2,16 @@
 
 {% block body_content %}
 
-    <article>
+    <article class="faq">
       <h1>Frequently Asked Questions</h1><br><br>
 
-      <p>Here you can find answers to the most frequently asked questions - if there is anything not answered here please feel free to <a href="{{ url_for('contact') }}">contact us</a> and let us know.</p>
+      <p>Here you can find answers to the most frequently asked questions - if there is anything not answered here please feel free to <a class="link-tags" href="{{ url_for('contact') }}">contact us</a> and let us know.</p>
       <br>
       <p><h4>How do I find out about sporting events near me?</h4></p>
-      <p>Using Trident you use the <a href="{{ url_for('maps') }}">map</a> to find a sporting venue near you or you can use select a team you want to find tickets for by <a href="{{ url_for('sports') }}">clicking here. </a></p><br>
+      <p>Using Trident you use the <a class="link-tags" href="{{ url_for('maps') }}">map</a> to find a sporting venue near you or you can use select a team you want to find tickets for by <a class="link-tags" href="{{ url_for('sports') }}">clicking here. </a></p><br>
       
       <p><h4>What types of sporting events do you offer?</h4></p>
-      <p>We currently search for <a href="{{ url_for('football') }}">football</a>, <a href="{{ url_for('rugby') }}">rugby</a> and <a href="{{ url_for('icehockey') }}">ice hockey</a>. If you would like to see a new sport added or add your team to one of the above please <a href="{{ url_for('contact') }}">contact us</a> and let us know.</p><br>
+      <p>We currently search for <a class="link-tags" href="{{ url_for('football') }}">football</a>, <a class="link-tags" href="{{ url_for('rugby') }}">rugby</a> and <a class="link-tags" href="{{ url_for('icehockey') }}">ice hockey</a>. If you would like to see a new sport added or add your team to one of the above please <a class="link-tags" href="{{ url_for('contact') }}">contact us</a> and let us know.</p><br>
 
       <p><h4>How do I purchase tickets?</h4></p>
       <p>If tickets are available for a fixture you will be able to click the link to be taken to the authorised ticket distributor. Please note this will take you to an external site and is not associated with Trident.</p><br>
@@ -49,4 +49,6 @@
       <p>This FAQ is fictional and created for illustrative purposes only. It does not reflect the practices of any real organization.</p><br>
 
     </article>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/background.js')}}"></script>
     {% endblock %}
