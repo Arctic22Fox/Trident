@@ -1,0 +1,52 @@
+{% extends 'template.html' %}
+
+{% block body_content %}
+
+    <article>
+      <h1>Frequently Asked Questions</h1><br><br>
+
+      <p>Here you can find answers to the most frequently asked questions - if there is anything not answered here please feel free to <a href="{{ url_for('contact') }}">contact us</a> and let us know.</p>
+      <br>
+      <p><h4>How do I find out about sporting events near me?</h4></p>
+      <p>Using Trident you use the <a href="{{ url_for('maps') }}">map</a> to find a sporting venue near you or you can use select a team you want to find tickets for by <a href="{{ url_for('sports') }}">clicking here. </a></p><br>
+      
+      <p><h4>What types of sporting events do you offer?</h4></p>
+      <p>We currently search for <a href="{{ url_for('football') }}">football</a>, <a href="{{ url_for('rugby') }}">rugby</a> and <a href="{{ url_for('icehockey') }}">ice hockey</a>. If you would like to see a new sport added or add your team to one of the above please <a href="{{ url_for('contact') }}">contact us</a> and let us know.</p><br>
+
+      <p><h4>How do I purchase tickets?</h4></p>
+      <p>If tickets are available for a fixture you will be able to click the link to be taken to the authorised ticket distributor. Please note this will take you to an external site and is not associated with Trident.</p><br>
+
+      <p><h4>What payment methods are accepted?</h4></p>
+      <p>Payment types accepted will vary from vendor to vendor and each will be detailed on their site. Please note this will take you to an external site and is not associated with Trident.</p><br>
+
+      <p><h4>What is your refund policy?</h4></p>
+      <p>Refund policy will vary from vendor to vendor and each will be detailed on their site. Please note this will take you to an external site and is not associated with Trident.</p><br>
+
+      <p><h4>How do I know if my tickets are legitimate?</h4></p>
+      <p>Whilst every effort has been taken to ensure we link to official ticket sellers we urge you to ensure you trust the the site you purchase from.</p><br>
+
+      <p><h4>Can I print my tickets?</h4></p>
+      <p>This will vary from event to event. Please check before purchasing.</p><br>
+
+      <p><h4>Can I transfer my tickets to someone else?</h4></p>
+      <p>This will vary from event to event. Please check before purchasing. </p><br>
+
+      <p><h4>How do I get notified about upcoming events?</h4></p>
+      <p>You will soon be able to sign up for email alerts for your favourite team(s) or locations.</p><br>
+
+      <p><h4>Can I create a saved list of events?</h4></p>
+      <p>You will soon be able to create favourite team(s) or locations and get notified about new events.</p><br>
+
+      <p><h4>Can I share events with my friends?</h4></p>
+      <p>Absolutley - tell all your friends about the site!</p><br>
+
+      <p><h4>Can I buy tickets in bulk?</h4></p>
+      <p>This will vary from event to event. Please check before purchasing.</p><br>
+      
+      <p><h4>Do you offer discounts for students, OAP's, military or blue light members?</h4></p>
+      <p>This will vary from event to event. Please check before purchasing.</p><br>
+      <br>
+      <p>This FAQ is fictional and created for illustrative purposes only. It does not reflect the practices of any real organization.</p><br>
+
+    </article>
+    {% endblock %}
