@@ -186,5 +186,10 @@ app.route('/football')
 def football():
     return render_template('football.html', title ='Football')
 
+@app.route('/faq')
+
+def faq():
+    return render_template('faq.html', title ='faq')
+
 if __name__ == '__main__':
     app.run(debug=True)
