@@ -7,6 +7,8 @@ $(document).ready(function(){
                 'static/bgimg/SSEArena.jpg',
                 'static/bgimg/StamfordBridge.jpeg',
                 'static/bgimg/TheKop.jpg',
+                'static/bgimg/LoftusRoad.gif',
+                'static/bgimg/LoftusRoad.jpg',
                 'static/bgimg/UtilitaArena.jpg',];
     
     var randomNumber = Math.floor(Math.random() * images.length);
