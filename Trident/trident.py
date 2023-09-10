@@ -72,6 +72,11 @@ def faq():
 def privacypolicy():
     return render_template('privacypolicy.html', title ='privacy-policy')
 
+@app.route('/terms')
+
+def terms():
+    return render_template('terms.html', title ='terms')
+
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
   form = ContactForm()

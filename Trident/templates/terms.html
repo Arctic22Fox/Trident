@@ -1,25 +1,26 @@
 {% extends 'template.html' %}
 
 {% block body_content %}
-    <article>
+    <article class="terms">
+      
       <h1>Terms and Conditions</h1><br><br>
       
       <p>Welcome to Trident, the sports events ticketing platform! These Terms and Conditions (the "Terms") outline the rules and regulations governing your use of our services. By accessing or using Trident, you agree to be bound by these Terms. Please read them carefully before using our platform. If you do not agree with any part of these Terms, you may not use Trident.</p><br><br>
 
-      <p><h5>Definitions</h5><br>
-      a) "Trident": Refers to our sports events ticketing platform.</p><br>
+      <h5>Definitions</h5><br>
+      <p>a) "Trident": Refers to our sports events ticketing platform.</p><br>
       <p>b) "Customer": Any individual or entity accessing and using Trident to find and purchase sports event tickets.</p><br>
       <p>c) "User Content": Any information, data, text, images, or other content posted or uploaded by users on Trident.</p><br><br>
       
-      <p><h5>Use of Trident</h5><br>
-      a) Eligibility: To use Trident, you must be at least 18 years old and capable of entering into a legally binding contract. By using Trident, you represent and warrant that you meet these eligibility requirements.</p><br>
+      <h5>Use of Trident</h5><br>
+      <p>a) Eligibility: To use Trident, you must be at least 18 years old and capable of entering into a legally binding contract. By using Trident, you represent and warrant that you meet these eligibility requirements.</p><br>
       
       <p>b) Account Creation: You may need to create a user account to access certain features of Trident. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to notify us immediately of any unauthorized use of your account.</p><br>
       
       <p>c) Lawful Use: You agree to use Trident solely for lawful purposes. You may not use the platform to engage in any illegal, fraudulent, harmful, or otherwise objectionable activities.</p><br><br>
       
-      <p><h5>Ticket Purchases</h5><br>
-      a) Ticket Availability: Trident offers a ticket-finding service and does not guarantee the availability of tickets for specific events. Availability and pricing of tickets are subject to change without notice.</p><br>
+      <h5>Ticket Purchases</h5><br>
+      <p>a) Ticket Availability: Trident offers a ticket-finding service and does not guarantee the availability of tickets for specific events. Availability and pricing of tickets are subject to change without notice.</p><br>
       
       <p>b) Ticket Purchases: When you find and purchase tickets through Trident, you agree to comply with the terms and conditions imposed by the event organizers and ticket sellers. Trident is not responsible for any disputes or issues related to the event or tickets.</p><br>
       
@@ -29,32 +30,35 @@
       
       <p>e) Refunds and Exchanges: Refund and exchange policies are determined by the event organizers and ticket sellers. Trident does not guarantee refunds or exchanges but will assist you in contacting the relevant parties.</p><br><br>
       
-      <p><h5>Intellectual Property</h5><br>
-      a) Trident Content: All content available on Trident, including text, graphics, logos, images, videos, and software, is the property of Trident or its licensors and is protected by intellectual property laws.</p><br>
+      <h5>Intellectual Property</h5><br>
+      <p>a) Trident Content: All content available on Trident, including text, graphics, logos, images, videos, and software, is the property of Trident or its licensors and is protected by intellectual property laws.</p><br>
       
       <p>b) User Content: By posting or uploading User Content on Trident, you grant Trident a worldwide, non-exclusive, royalty-free, and transferable license to use, reproduce, modify, adapt, publish, translate, distribute, and display such content.</p><br><br>
       
-      <p><h5>Limitation of Liability</h5><br>
-      a) Trident makes no warranties or representations regarding the accuracy, completeness, or reliability of information on the platform. Your use of Trident is at your own risk.</p><br>
+      <h5>Limitation of Liability</h5><br>
+      <p>a) Trident makes no warranties or representations regarding the accuracy, completeness, or reliability of information on the platform. Your use of Trident is at your own risk.</p><br>
       
       <p>b) Trident shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of your use of Trident or any ticket purchased through the platform.</p><br><br>
       
-      <p><h5>Indemnification</h5><br>
-      You agree to indemnify and hold Trident, its affiliates, officers, directors, employees, and agents harmless from any claims, liabilities, damages, losses, or expenses (including attorney's fees) arising out of or related to your use of Trident or violation of these Terms.</p><br><br>
+      <h5>Indemnification</h5><br>
+      <p>You agree to indemnify and hold Trident, its affiliates, officers, directors, employees, and agents harmless from any claims, liabilities, damages, losses, or expenses (including attorney's fees) arising out of or related to your use of Trident or violation of these Terms.</p><br><br>
       
-      <p><h5>Modification of Terms</h5><br>
-      Trident reserves the right to update or modify these Terms at any time without prior notice. By continuing to use Trident after any changes to the Terms, you agree to be bound by the revised Terms.</p><br><br>
+      <h5>Modification of Terms</h5><br>
+      <p>Trident reserves the right to update or modify these Terms at any time without prior notice. By continuing to use Trident after any changes to the Terms, you agree to be bound by the revised Terms.</p><br><br>
       
-      <p><h5>Termination</h5><br>
-      Trident may, at its sole discretion, terminate or suspend your access to the platform at any time and for any reason, without liability.</p><br><br>
+      <h5>Termination</h5><br>
+      <p>Trident may, at its sole discretion, terminate or suspend your access to the platform at any time and for any reason, without liability.</p><br><br>
       
-      <p><h5>Governing Law</h5><br>
-      These Terms shall be governed by and construed in accordance with the laws of [Your Country/State], without regard to its conflicts of law principles.</p><br><br>
+      <h5>Governing Law</h5><br>
+      <p>These Terms shall be governed by and construed in accordance with the laws of [Your Country/State], without regard to its conflicts of law principles.</p><br><br>
       
-      <p><h5>Contact Information</h5><br>
-      If you have any questions or concerns regarding these Terms, please contact us at [Your Contact Email].</p><br><br>
+      <h5>Contact Information</h5><br>
+      <p>If you have any questions or concerns regarding these Terms, please contact us at [Your Contact Email].</p><br><br>
       
       <p>By using Trident, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</p>
     </article>
 
+
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/background.js')}}"></script>
     {% endblock %}
