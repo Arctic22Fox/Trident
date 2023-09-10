@@ -321,7 +321,9 @@ div.gallery img {
   justify-content: center;
   align-items: flex-start;
   background-color: rgb(0, 23, 31, 0.9);
-  color: #fff
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px
   
 }
 
@@ -361,7 +363,7 @@ h5 {
   background-color: rgb(0, 23, 31, 0.9);
   color: #fff;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 20px
   
 }
 /* Privacy */
@@ -374,7 +376,9 @@ h5 {
   justify-content: center;
   align-items: flex-start;
   background-color: rgb(0, 23, 31, 0.9);
-  color: #fff
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px
   
 }
 
