@@ -8,7 +8,6 @@
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
     <link rel="stylesheet" href="{{url_for('static', filename='styles/main.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='styles/login.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='styles/background.css')}}">
     <script
     src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
@@ -45,7 +44,7 @@
                 <ul>
                   <li>About us</li>
                     <li><a href="{{ url_for('faq') }}">F.A.Q</a></li>
-                    <li>Policies</li>
+                    <li><a href="{{ url_for('privacypolicy') }}">Policies</a></li>
                   </ul>
           </div>
           

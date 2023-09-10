@@ -325,6 +325,20 @@ div.gallery img {
   
 }
 
+/* Privacy */
+/* Privacy */
+
+.privacy{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 23, 31, 0.9);
+  color: #fff;
+  
+}
+
 /* LINKS */
 /* LINKS */
 .link-tags{

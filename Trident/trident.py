@@ -58,6 +58,20 @@ def rugby():
 def signup():
     return render_template('signup.html', title ='Signup')
 
+app.route('/football')
+def football():
+    return render_template('football.html', title ='Football')
+
+@app.route('/faq')
+
+def faq():
+    return render_template('faq.html', title ='faq')
+
+@app.route('/privacypolicy')
+
+def privacypolicy():
+    return render_template('privacypolicy.html', title ='privacy-policy')
+
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
   form = ContactForm()
@@ -81,7 +95,6 @@ def Connection():
     db = 'trident'
     user = 'Robert'
     password = 'Rob01ert'
-
     conn = pymysql.connect(host=server, user=user, password=password, database=db)
     conn.autocommit(True)
     return conn
@@ -182,14 +195,7 @@ def userpage():
             return render_template('userpage.html', users=users, title ='Userpage')
     return redirect(url_for('login'))
 
-app.route('/football')
-def football():
-    return render_template('football.html', title ='Football')
 
-@app.route('/faq')
-
-def faq():
-    return render_template('faq.html', title ='faq')
 
 if __name__ == '__main__':
     app.run(debug=True)
