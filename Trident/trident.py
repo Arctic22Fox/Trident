@@ -22,12 +22,20 @@ mail.init_app(app)
 
 @app.route('/')
 def home():
+    rugby = []
     if 'loggedin' in session and session['loggedin'] == True:
         account_name = 'username'
     else:
         account_name = 'Login'
+    conn = Connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM rugby_fixtures")
+    for row in cursor.fetchall():
+        rugby.append({'address': str(row[3]).split(',')[0] + ' ' + str(row[3]).split(',')[2], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row[4], 'venue':row[2]})
 
-    return render_template('home.html', title='Home', login=url_for('login'), Account=account_name)
+
+    return render_template('home.html', title='Home', login=url_for('login'), Account=account_name, rugby=rugby)
+
 @app.route('/maps')
 
 def maps():
@@ -126,14 +134,23 @@ def login():
             if sha256_crypt.verify(password_candidate, password):
                 session['logged_in'] = True
                 session['username'] = username
-                app.logger.debug("Login successful!")  # Add this line for debugging
-                return render_template('home.html', login = url_for('userpage'), Account = 'My Account' )
-            else:
-                msg = 'Invalid credentials!'
-        else:
-            msg = 'Username not found!'
-    return render_template('login.html', msg=msg, title ='login', login = url_for('login'), Account = 'Login')
 
+                rugby = []
+                conn = Connection()
+                cursor = conn.cursor()
+                cursor.execute("SELECT * FROM rugby_fixtures")
+                for row in cursor.fetchall():
+                    rugby.append({'address': str(row[3]).split(',')[0] + ' ' + str(row[3]).split(',')[2], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row[4], 'venue':row[2]})
+
+                app.logger.debug("Login successful!")  # Add this line for debugging
+                return render_template('home.html', login = url_for('userpage'), Account = 'My Account', rugby=rugby)
+            else:
+                flash('Invalid password!', 'error')
+        else:
+            flash('Username not found!', 'error')
+    
+    return render_template('login.html', msg=msg, title ='login', login = url_for('login'), Account = 'Login')
+    
 @app.route('/logout', methods = ['POST', 'GET'])
 def logout():
     session.pop('logged_in', None)
@@ -145,7 +162,7 @@ def logout():
 
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
-    msg = ''  # Initialize an empty message for displaying feedback
+    msg = ''  
     
     if request.method == 'POST':
         username = request.form['username']
@@ -180,7 +197,7 @@ def registration():
             msg = 'Registration successful!'
             
             # Redirect the user to the login page after successful registration
-            return redirect(url_for('login'))
+            return render_template('login.html', message=msg)
 
     return render_template('registration.html', msg=msg, title ='Registration')
 
