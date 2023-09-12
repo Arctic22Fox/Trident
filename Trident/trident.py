@@ -22,6 +22,8 @@ mail.init_app(app)
 
 @app.route('/')
 def home():
+    football = []
+    icehockey = []
     rugby = []
     if 'loggedin' in session and session['loggedin'] == True:
         account_name = 'username'
@@ -32,9 +34,11 @@ def home():
     cursor.execute("SELECT * FROM rugby_fixtures")
     for row in cursor.fetchall():
         rugby.append({'address': str(row[3]).split(',')[0] + ' ' + str(row[3]).split(',')[2], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row[4], 'venue':row[2]})
+        football.append({'address': str(row[3]).split(',')[0] + ' ' + str(row[3]).split(',')[2], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row[4]})
+        icehockey.append({'address': str(row[3]).split(',')[0] + ' ' + str(row[3]).split(',')[2], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row})
 
 
-    return render_template('home.html', title='Home', login=url_for('login'), Account=account_name, rugby=rugby)
+    return render_template('home.html', title='Home', login=url_for('login'), Account=account_name, rugby=rugby, football=football, icehockey=icehockey)
 
 @app.route('/maps')
 
@@ -134,16 +138,17 @@ def login():
             if sha256_crypt.verify(password_candidate, password):
                 session['logged_in'] = True
                 session['username'] = username
-
+# must create connection for all sports
                 rugby = []
                 conn = Connection()
                 cursor = conn.cursor()
                 cursor.execute("SELECT * FROM rugby_fixtures")
                 for row in cursor.fetchall():
                     rugby.append({'address': str(row[3]).split(',')[0] + ' ' + str(row[3]).split(',')[2], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row[4], 'venue':row[2]})
-
+                    football.append({'address': str(row[3]).split(',')[0] + ' ' + str(row[3]).split(',')[2], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row[4]})
+                    icehockey.append({'address': str(row[3]).split(',')[0] + ' ' + str(row[3]).split(',')[2], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row})
                 app.logger.debug("Login successful!")  # Add this line for debugging
-                return render_template('home.html', login = url_for('userpage'), Account = 'My Account', rugby=rugby)
+                return render_template('home.html', login = url_for('userpage'), Account = 'My Account', rugby=rugby, football=football, icehockey=icehockey)
             else:
                 flash('Invalid password!', 'error')
         else:
@@ -220,7 +225,7 @@ def userpage():
 
 @app.errorhandler(404)
 def not_found(e):
-  return render_template("404.html")
+  return render_template("404.html", title ="404 what the duck")
 
 
 if __name__ == '__main__':

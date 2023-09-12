@@ -29,7 +29,10 @@
 
     <div class="hero">
 
+      
       <table class="fixture_table">
+
+        <tr> <td  style="text-align:center; width: 100%;">Rugby</td> </tr>
         <tr>
 
           <th>Home-Team</th>
@@ -46,6 +49,76 @@
   
         
         {% for a in rugby %}
+  
+        <tr>
+          
+          <td>{{ a.Home_Team }}</td>
+          <td>{{ a.Away_Team }}</td>
+          <td>{{ a.venue}}</td>
+          <td>{{ a.date }}</td>
+          <td>{{ a.time }}</td>
+          <td>{{ a.address }}</td>
+          
+          
+          
+        <tr>
+          {% endfor %}
+      </table>
+
+      <table class="fixture_table">
+
+        <tr> <td  style="text-align:center; width: 100%;">Rugby</td> </tr>
+        <tr>
+
+          <th>Home-Team</th>
+          <th>Away-Team</th>
+          <th>Venue Name</th>
+          <th>Date</th>
+          <th>Start Time</th>
+          <th>Address</th>
+          
+          
+          
+          
+        </tr>
+  
+        
+        {% for a in football %}
+  
+        <tr>
+          
+          <td>{{ a.Home_Team }}</td>
+          <td>{{ a.Away_Team }}</td>
+          <td>{{ a.venue}}</td>
+          <td>{{ a.date }}</td>
+          <td>{{ a.time }}</td>
+          <td>{{ a.address }}</td>
+          
+          
+          
+        <tr>
+          {% endfor %}
+      </table>
+
+      <table class="fixture_table">
+
+        <tr> <td  style="text-align:center; width: 100%;">Rugby</td> </tr>
+        <tr>
+
+          <th>Home-Team</th>
+          <th>Away-Team</th>
+          <th>Venue Name</th>
+          <th>Date</th>
+          <th>Start Time</th>
+          <th>Address</th>
+          
+          
+          
+          
+        </tr>
+  
+        
+        {% for a in icehockey %}
   
         <tr>
           
