@@ -8,23 +8,71 @@
 
   <div class="header">
     {% if 'logged_in' in session and session['logged_in'] %}
-    <h3>Welcome  to Trident!  <br>{{ session['username'] }}<br> The sports events ticketing platform!</h3>
+    <h3>Welcome  to Trident! {{ session['username'] }}<br> The sports events ticketing platform!</h3>
     {% else %}
     <h3>Welcome to Trident! <br><br> The sports events ticketing platform!</h3>
     {% endif %}
   </div>
   
 
-    <video class="content" loop muted>
-      <source src="{{ url_for('static', filename='Trident.mp4') }}" type="video/mp4" alt="video of sports">
-    </video>
+  <div class="fluff_piece">Welcome to Trident!
 
+    Trident is your one-stop shop for finding and booking tickets for sporting events near you in the UK. Whether you're a football fan, a rugby fan, or a fan of any other sport, we have you covered.
+    
+    With Trident, you can:
+    
+    *Search for events by sport *LINK* or location, *LINK*
+    *See a list of all the upcoming events in your area. *COMING SOON*
+    *Book tickets with just a few clicks.
+    
+    We make it easy to find the perfect sporting event for you, so what are you waiting for? Start browsing today!</div>
+
+    <div class="hero">
+
+      <table class="fixture_table">
+        <tr>
+
+          <th>Home-Team</th>
+          <th>Away-Team</th>
+          <th>Venue Name</th>
+          <th>Date</th>
+          <th>Start Time</th>
+          <th>Address</th>
+          
+          
+          
+          
+        </tr>
+  
+        
+        {% for a in rugby %}
+  
+        <tr>
+          
+          <td>{{ a.Home_Team }}</td>
+          <td>{{ a.Away_Team }}</td>
+          <td>{{ a.venue}}</td>
+          <td>{{ a.date }}</td>
+          <td>{{ a.time }}</td>
+          <td>{{ a.address }}</td>
+          
+          
+          
+        <tr>
+          {% endfor %}
+      </table>
+
+        <video class="content" loop muted autoplay preload="auto">
+          <source src="{{ url_for('static', filename='Trident.mp4') }}" type="video/mp4" alt="video of sports">
+        </video>
+
+    </div>
 
   
-</div>
+  </div>
   
 
 
 
-<script src="{{ url_for('static', filename='js/homevideo.js') }}"></script>
+<!-- <script src="{{ url_for('static', filename='js/homevideo.js') }}"></script> -->
 {% endblock %}
