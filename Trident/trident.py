@@ -34,8 +34,8 @@ def home():
     cursor.execute("SELECT * FROM rugby_fixtures")
     for row in cursor.fetchall():
         rugby.append({'address': str(row[3]).split(',')[0] + ' ' + str(row[3]).split(',')[2], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row[4], 'venue':row[2]})
-        football.append({'address': str(row[3]).split(',')[0] + ' ' + str(row[3]).split(',')[2], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row[4]})
-        icehockey.append({'address': str(row[3]).split(',')[0] + ' ' + str(row[3]).split(',')[2], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row})
+        football.append({'address': str(row[3]).split(',')[0] + ' ' + str(row[3]).split(',')[2], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row[4], 'venue':row[2]})
+        icehockey.append({'address': str(row[3]).split(',')[0] + ' ' + str(row[3]).split(',')[2], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row[4], 'venue':row[2]})
 
 
     return render_template('home.html', title='Home', login=url_for('login'), Account=account_name, rugby=rugby, football=football, icehockey=icehockey)
