@@ -170,7 +170,7 @@ ul.menu{
 
 /* div container */
 .flex-wrapper {
-  position: relative;
+  position: static;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
