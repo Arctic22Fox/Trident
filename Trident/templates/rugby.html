@@ -48,7 +48,39 @@
         </a>
     </div>
 </div>
+<table class="fixture_table">
 
+    
+
+      <th>Home-Team</th>
+      <th>Away-Team</th>
+      <!-- <th>Venue Name</th> -->
+      <th>Date</th>
+      <th>Start Time</th>
+      <th>Address</th>
+        
+        
+        
+        
+    </tr>
+
+      
+      {% for a in rugby %}
+
+    <tr>
+        
+      <td>{{ a.Home_Team }}</td>
+      <td>{{ a.Away_Team }}</td>
+      <!-- <td>{{ a.venue}}</td> -->
+      <td>{{ a.date }}</td>
+      <td>{{ a.time }}</td>
+      <td>{{ a.address }}</td>
+        
+        
+        
+    <tr>
+        {% endfor %}
+  </table>
 <script type="text/javascript" src="{{ url_for('static', filename='js/background.js')}}"></script>
 
 {% endblock %}

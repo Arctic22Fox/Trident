@@ -14,8 +14,10 @@
     {% endif %}
   </div>
   
-
-  <div class="fluff_piece">Welcome to Trident!
+  <div class="hero" style="display: flex; position: relative;">
+    
+    <article class="home_article">
+    Welcome to Trident!
 
     Trident is your one-stop shop for finding and booking tickets for sporting events near you in the UK. Whether you're a football fan, a rugby fan, or a fan of any other sport, we have you covered.
     
@@ -27,131 +29,28 @@
     <br>
     <br>
 
-    *Search for events by sport *LINK* or location, *LINK*
+    *Search for events by sport or location
+    <br>
     *See a list of all the upcoming events in your area. *COMING SOON*
+    <br>
     *Book tickets with just a few clicks.
     
     <br>
     <br>
 
-    We make it easy to find the perfect sporting event for you, so what are you waiting for? Start browsing today!</div>
+    We make it easy to find the perfect sporting event for you, so what are you waiting for?
+    <br>
+    Start browsing today!
 
-    <div class="hero">
-
-
-      <table class="fixture_table">
-
-        <tr> <td  style="text-align:center; width: 100%;">Rugby</td> </tr>
-        <tr>
-
-          <th>Home-Team</th>
-          <th>Away-Team</th>
-          <th>Venue Name</th>
-          <th>Date</th>
-          <th>Start Time</th>
-          <th>Address</th>
-          
-          
-          
-          
-        </tr>
-  
-        
-        {% for a in rugby %}
-  
-        <tr>
-          
-          <td>{{ a.Home_Team }}</td>
-          <td>{{ a.Away_Team }}</td>
-          <td>{{ a.venue}}</td>
-          <td>{{ a.date }}</td>
-          <td>{{ a.time }}</td>
-          <td>{{ a.address }}</td>
-          
-          
-          
-        <tr>
-          {% endfor %}
-      </table>
-
-      <table class="fixture_table">
-
-        <tr> <td  style="text-align:center; width: 100%;">Rugby</td> </tr>
-        <tr>
-
-          <th>Home-Team</th>
-          <th>Away-Team</th>
-          <th>Venue Name</th>
-          <th>Date</th>
-          <th>Start Time</th>
-          <th>Address</th>
-          
-          
-          
-          
-        </tr>
-  
-        
-        {% for a in football %}
-  
-        <tr>
-          
-          <td>{{ a.Home_Team }}</td>
-          <td>{{ a.Away_Team }}</td>
-          <td>{{ a.venue}}</td>
-          <td>{{ a.date }}</td>
-          <td>{{ a.time }}</td>
-          <td>{{ a.address }}</td>
-          
-          
-          
-        <tr>
-          {% endfor %}
-      </table>
-
-      <table class="fixture_table">
-
-        <tr> <td  style="text-align:center; width: 100%;">Rugby</td> </tr>
-        <tr>
-
-          <th>Home-Team</th>
-          <th>Away-Team</th>
-          <th>Venue Name</th>
-          <th>Date</th>
-          <th>Start Time</th>
-          <th>Address</th>
-          
-          
-          
-          
-        </tr>
-  
-        
-        {% for a in icehockey %}
-  
-        <tr>
-          
-          <td>{{ a.Home_Team }}</td>
-          <td>{{ a.Away_Team }}</td>
-          <td>{{ a.venue}}</td>
-          <td>{{ a.date }}</td>
-          <td>{{ a.time }}</td>
-          <td>{{ a.address }}</td>
-          
-          
-          
-        <tr>
-          {% endfor %}
-      </table>
-
-        <video class="content" loop muted autoplay preload="auto">
+    </article>
+      <video class="content" loop muted autoplay preload="auto">
           <source src="{{ url_for('static', filename='Trident.mp4') }}" type="video/mp4" alt="video of sports">
-        </video>
+      </video>
 
     </div>
 
   
-  </div>
+  
   
 
 

@@ -24,7 +24,7 @@ mail.init_app(app)
 def home():
     football = []
     icehockey = []
-    rugby = []
+    
     if 'loggedin' in session and session['loggedin'] == True:
         account_name = 'username'
     else:
@@ -33,12 +33,12 @@ def home():
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM rugby_fixtures")
     for row in cursor.fetchall():
-        rugby.append({'address': str(row[3]).split(',')[0] + ' ' + str(row[3]).split(',')[2], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row[4], 'venue':row[2]})
+        
         football.append({'address': str(row[3]).split(',')[0] + ' ' + str(row[3]).split(',')[2], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row[4], 'venue':row[2]})
         icehockey.append({'address': str(row[3]).split(',')[0] + ' ' + str(row[3]).split(',')[2], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row[4], 'venue':row[2]})
 
 
-    return render_template('home.html', title='Home', login=url_for('login'), Account=account_name, rugby=rugby, football=football, icehockey=icehockey)
+    return render_template('home.html', title='Home', login=url_for('login'), Account=account_name, football=football, icehockey=icehockey)
 
 @app.route('/maps')
 
@@ -53,17 +53,35 @@ def sports():
 @app.route('/football')
 
 def football():
-    return render_template('football.html', title ='Football')
+    football = []
+    conn = Connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM football_fixtures_new WHERE DATE BETWEEN '10-01-2023' AND '10-31-2023' ")
+    for row in cursor.fetchall():
+        football.append({'address': row[3], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row[4]})
+    return render_template('football.html', title ='Football', football=football)
 
 @app.route('/icehockey')
 
 def icehockey():
-    return render_template('icehockey.html', title ='Ice Hockey')
+    icehockey = []
+    conn = Connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM elite_fixtures_oct")
+    for row in cursor.fetchall():
+        icehockey.append({'address': row[3], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row[4]})
+    return render_template('icehockey.html', title ='Ice Hockey', icehockey=icehockey)
 
 @app.route('/rugby')
 
 def rugby():
-    return render_template('rugby.html', title ='Rugby')
+    rugby = []
+    conn = Connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM rugby_fixtures")
+    for row in cursor.fetchall():
+        rugby.append({'address': row[3], 'Home_Team': row[0], 'Away_Team': row[1], 'date': row[5], 'time': row[4]})
+    return render_template('rugby.html', title ='Rugby', rugby=rugby)
 
 @app.route('/signup')
 
@@ -72,6 +90,7 @@ def signup():
 
 app.route('/football')
 def football():
+    
     return render_template('football.html', title ='Football')
 
 @app.route('/faq')

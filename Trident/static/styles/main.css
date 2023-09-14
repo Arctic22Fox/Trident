@@ -31,11 +31,21 @@ body {
 /* NAVBAR */
 /* NAVBAR */
 /* NAVBAR */
-  nav {
-    height: 100px;
-    background-color: rgb(0, 23, 31, 0.9);
-    padding: 5px 20px;
-  }
+nav {
+  height: 100px;
+  background-color: rgb(0, 23, 31, 0.9);
+  padding: 5px 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul.menu{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-grow: 1;
+}
   ul {
     list-style-type: none;
   }
@@ -160,6 +170,7 @@ body {
 
 /* div container */
 .flex-wrapper {
+  position: relative;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -168,7 +179,7 @@ body {
 }
 
 /* home fluff piece */
-.fluff_piece{
+.home_article{
   
   background-color: rgb(0, 23, 31, 0.6);
   height: auto;
@@ -178,8 +189,9 @@ body {
   align-items: center;
   position: absolute;
   color: #fff;
+  font-size: xx-large;
   text-align: center;
-  top: 20%;
+  top: 200px;
   left: 15%;
 
   
@@ -216,13 +228,14 @@ input[type= "submit"]:hover {
   background-color: rgb(0, 23, 31, 0.6);
   height: auto;
   width: auto;
-  display: flex;
-  position: absolute;
+  display: grid;
+  position: relative;
   color: #fff;
   text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-left: auto;
+  margin-right: auto;
+
+  
 
 }
 
